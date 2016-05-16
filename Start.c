@@ -13,7 +13,10 @@ int charger();
 int about();
 int thanks();
 int change();
+int flash ();
+
  int choice;
+
 int main(){
 int dis ;
 int ac ;
@@ -42,57 +45,69 @@ menu();
 int menu() {
 do  {
    
-    printf("   0)  Upgrade HBOOT!\n");
-    printf("   1)  Unlock your bootloader\n");
-    printf("   2)  Flash a recovery (REQUIRES BOOTLOADER UNLOCKED)\n");
-    printf("   3)  Root your device (REQUIRES BOOTLOADER UNLOCKED)\n");
-    printf("   4)  Flash a Custom ROM/Build a Custom ROM\n");
-    printf("   5)  Verify fastboot/adb status connection/get all info\n");
-    printf("   6)  CID/MID Reader\n");
-    printf("   7)  Charge your phone (FASTBOOT MODE,when you can't flash anything)\n");
-    printf("   8)  Lock your bootloader\n");
-    printf("   9)  About this program\n");
-    printf("   10) Say thanks for support my work! (will open your browser)\n");
-    printf("   11) Open Changelog\n");
-    printf("   12) byee\n");
+    printf("   1)  Upgrade HBOOT!\n");
+    printf("   2)  Unlock your bootloader\n");
+    printf("   3)  Flash a recovery (REQUIRES BOOTLOADER UNLOCKED)\n");
+    printf("   4)  Root your device (REQUIRES BOOTLOADER UNLOCKED)\n");
+    printf("   5)  Flash a Custom ROM/Build a Custom ROM\n");
+    printf("   6)  Verify fastboot/adb status connection/get all info\n");
+    printf("   7)  CID/MID Reader\n");
+    printf("   8)  Charge your phone (FASTBOOT MODE,when you can't flash anything)\n");
+    printf("   9)  Lock your bootloader\n");
+    printf("   10)  About this program\n");
+    printf("   11) Say thanks for support my work! (will open your browser)\n");
+    printf("   12) Open Changelog\n");
+    printf("   13) byee\n");
 
     scanf("%d", &choice);
     switch (choice)
 	{
-	   case 0: 
+	   case 1: 
                hboot();
 		   break;
+            
 	   case 2: 
 		   UBoot();
 		   break;
-           case 3: 
-		           FR();
-                   break;
-           case 4: 
+            
+       case 3: 
+		   FR();
+           break;
+            
+       case 4: 
 	  	   root();
 	  	   break;
+            
 	   case 5: 
-		   verify();
+		  flash();
 		   break;
+            
 	   case 6:
-                   cid();
-                    break;
+          verify();
+            break;
+            
 	   case 7:
-                   charger();
-                    break;
+            cid();
+             break;
+            
            case 8:
-                   LBoot();
-                    break;
+            charger();
+             break;
+            
            case 9:
-                   about();
-                    break;
+             LBoot();
+             break;
+            
            case 10:
-                   thanks();
-                    break;
+             about();
+              break;
+            
            case 11:
-                   change();
-                    break;
+               thanks();
+               break;
+            
         case 12:
+            change();
             printf("bye");
             
         default:
@@ -100,7 +115,7 @@ do  {
             break;
             
       } 
-    }while (choice != "12");
+    }while (choice != "13");
 }
 
 int UBoot() 
@@ -156,30 +171,32 @@ int change()
 {
     
     
-printf("   =================================================================\n");
-printf("   |                                                               |\n");
-printf("   |                 Welcome to HTC One X Modder!                  |\n");
-printf("   |                                                               |\n");
-printf("   |               Changelog! See the lasts changes:               |\n");
-printf("   |                                                               |\n");
-printf("   =================================================================\n");
-printf("   There are all the changes:\n");
-printf(".\n");
-printf("   V1.0 Stable! (THIS VERSION):\n");
-printf("   Planning to make a custom rom autobuilder! (ONLY FOR LINUX USERS)\n");
-printf("   Removed 2 junk files unnecessary, added HTC Drivers. Size increased of 12MB.\n");
-printf("   Code reworked, -6/-7Kb, now the size is 64KB :D\n");
-printf("   Fixed an error with  in the FAQ section\n");
-printf("   Added an HTC Driver Installer on boot\n");
-printf("   Added a beta of Custom Rom Builder (NOT AVAIBLE, SORRY)\n");
-printf("   There's a bug with the HTC Driver Installer. I will fix it soon.\n");
-printf("   Added four more functions. You can see them below:\n");
-printf("   -Get all info about your phone (5th choice)	\n");
-printf("   -Lock/Relock bootloader (8th choice)\n");
-printf("   -Kali NetHunter builder&installer! (thanks pleomaxell)(NOT AVAIBLE)\n");
+    printf("   =================================================================\n");
+    printf("   |                                                               |\n");
+    printf("   |                 Welcome to HTC One X Modder!                  |\n");
+    printf("   |                                                               |\n");
+    printf("   |               Changelog! See the lasts changes:               |\n");
+    printf("   |                                                               |\n");
+    printf("   =================================================================\n");
+    printf("   There are all the changes:\n");
+    printf(".\n");
+    printf("   V1.0 Stable! (THIS VERSION):\n");
+    printf("   Planning to make a custom rom autobuilder! (ONLY FOR LINUX USERS)\n");
+    printf("   Removed 2 junk files unnecessary, added HTC Drivers. Size increased of 12MB.\n");
+    printf("   Code reworked, -6/-7Kb, now the size is 64KB :D\n");
+    printf("   Fixed an error with  in the FAQ section\n");
+    printf("   Added an HTC Driver Installer on boot\n");
+    printf("   Added a beta of Custom Rom Builder (NOT AVAIBLE, SORRY)\n");
+    printf("   There's a bug with the HTC Driver Installer. I will fix it soon.\n");
+    printf("   Added four more functions. You can see them below:\n");
+    printf("   -Get all info about your phone (5th choice)	\n");
+    printf("   -Lock/Relock bootloader (8th choice)\n");
+    printf("   -Kali NetHunter builder&installer! (thanks pleomaxell)(NOT AVAIBLE)\n");
 }
 
-
+int flash () {
+    printf("test");
+}
 
 
 
